@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  @apply font-sans text-neutral-700 antialiased;
+}
+
+
+/* --- utilities --- */
+@layer utilities {
+  .bg-oval {
+    background:
+      radial-gradient(120% 85% at 50% 55%,
+        #8C8A85 0%,
+        #CFCFCB 32%,
+        #E4E3DE 58%,
+        #EAE9E3 80%,
+        #EAE9E3 100%);
+    background-attachment: fixed;
+    background-size: 120% 120%;
+    animation: ovalShift 40s ease-in-out infinite alternate;
+  }
+
+  .grainy {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;          /* <-- clip the ::before so it can't create scrollbars */
+  }
+  .grainy::before {
+    content: "";
+    position: absolute;
+    inset: 0;                  /* fill the viewport */
+    z-index: -1;
+    opacity: 0.09;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    background-size: 200px 200px;
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>\
+<filter id='n'>\
+<feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/>\
+<feColorMatrix type='saturate' values='0'/>\
+</filter>\
+<rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/>\
+</svg>");
+    transform: scale(1.25);    /* oversize to avoid edges */
+    animation: grainDrift 30s linear infinite;
+  }
+}
+
+@keyframes ovalShift {
+  0%,100% { background-position: 0% 50%; filter: brightness(100%); }
+  50%     { background-position: 100% 52%; filter: brightness(104%); }
+}
+
+@keyframes grainDrift {
+  0%   { transform: scale(1.25) translate3d(0,0,0); }
+  50%  { transform: scale(1.25) translate3d(-3%, 2%, 0); }
+  100% { transform: scale(1.25) translate3d(0,0,0); }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ml16 {
+  font-kerning: normal;
+  letter-spacing: normal;
+}
+
+.ml16 .letter {
+  display: inline-block;   /* needed for transform */
+  line-height: 1em;
+  opacity: 0;              /* start hidden for a clean pop */
+  will-change: transform, opacity;
+}
+
+/* Typewriter cursor */
+.ml16::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.9s steps(1) infinite;
+  color: #6b6b6b;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Start a bit above center, then move higher */
+.hero-animate {
+  --start-offset: -12vh;   /* higher start (more negative = higher) */
+  --end-offset:   -32vh;  /* final resting spot (more negative = higher) */
+  transform: translateY(var(--start-offset));
+  animation: heroFloatUp 1.9s cubic-bezier(.22,1,.36,1) forwards;
+  animation-delay: 1.7s;  /* match your typewriter timing */
+}
+
+@keyframes heroFloatUp {
+  from { transform: translateY(var(--start-offset)); }
+  to   { transform: translateY(var(--end-offset)); }
+}
+
+
+
+
+
+
+
