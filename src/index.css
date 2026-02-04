@@ -1,0 +1,226 @@
+/* Global styles for Camila Villalobos Portfolio */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root container */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles */
+html {
+  height: 100%;
+  background: #E4E3DE;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  @apply font-sans text-neutral-700 antialiased;
+}
+
+/* Custom utility classes */
+@layer utilities {
+
+  /* Animated gradient background */
+  .bg-oval {
+    background:
+      radial-gradient(120% 85% at 50% 55%,
+        #8C8A85 0%,
+        #CFCFCB 32%,
+        #E4E3DE 58%,
+        #EAE9E3 80%,
+        #EAE9E3 100%);
+    background-attachment: fixed;
+    background-size: 120% 120%;
+    animation: ovalShift 40s ease-in-out infinite alternate;
+  }
+
+  /* Subtle noise texture overlay */
+  .grainy {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .grainy::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.09;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    background-size: 200px 200px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/></svg>");
+    will-change: transform;
+    animation: grainDrift 30s linear infinite;
+  }
+
+  /* Frosted glass effect for cards */
+  .mirror-glass {
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.62) 0%,
+      rgba(255,255,255,0.22) 100%
+    );
+    border: 1px solid rgba(255,255,255,0.55);
+    -webkit-backdrop-filter: blur(18px) saturate(1.55);
+    backdrop-filter: blur(18px) saturate(1.55);
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 14px 34px rgba(0,0,0,0.10),
+      inset 0 1px 0 rgba(255,255,255,0.55);
+  }
+
+  /* Shine overlay for glass effect */
+  .mirror-glass::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    pointer-events: none;
+    background:
+      radial-gradient(60% 35% at 20% 15%, rgba(255,255,255,0.55), transparent 60%),
+      radial-gradient(55% 30% at 80% 10%, rgba(255,255,255,0.35), transparent 60%),
+      linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.02) 55%, rgba(255,255,255,0.14));
+    transform: rotate(12deg);
+    opacity: 0.9;
+  }
+
+  /* Safe area padding for iPhone notch */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Keyframe animations */
+@keyframes ovalShift {
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 52%; }
+}
+
+@keyframes grainDrift {
+  0%   { transform: translate3d(0,0,0); }
+  50%  { transform: translate3d(-3%, 2%, 0); }
+  100% { transform: translate3d(0,0,0); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes fadeOutCursor {
+  to { opacity: 0; }
+}
+
+@keyframes heroFloat {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero section entrance */
+.hero-animate {
+  animation: heroFloat 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Typewriter cursor */
+.typewriter::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.9s steps(1) infinite;
+  color: #6b6b6b;
+}
+
+.typewriter.typing-complete::after {
+  animation: fadeOutCursor 0.8s ease-out forwards;
+}
+
+/* Subtitle delayed fade-in */
+.subtitle {
+  animation: fadeUp 1.2s ease-out 1s forwards;
+  opacity: 0;
+}
+
+/* Scroll-triggered reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card staggered animations */
+.card-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.card-animate:nth-child(1) { animation-delay: 0.1s; }
+.card-animate:nth-child(2) { animation-delay: 0.3s; }
+.card-animate:nth-child(3) { animation-delay: 0.5s; }
+.card-animate:nth-child(4) { animation-delay: 0.7s; }
+.card-animate:nth-child(5) { animation-delay: 0.9s; }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .grainy::before {
+    animation: none;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .text-xs { font-size: 0.813rem; }
+  .text-sm { font-size: 0.938rem; }
+  .text-base { font-size: 1.063rem; }
+  .text-lg { font-size: 1.188rem; }
+  .text-xl { font-size: 1.313rem; }
+  .text-2xl { font-size: 1.625rem; }
+  .text-3xl { font-size: 2rem; }
+  .text-4xl { font-size: 2.5rem; }
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
