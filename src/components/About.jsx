@@ -36,12 +36,12 @@ const socialLinks = [
 // Work experience data
 const experience = [
   {
-    title: "Art Director – FASTSIGNS",
+    title: "Art Director | Graphic Design Manager - FASTSIGNS",
     meta: "January 2025 – Present",
     details: [
       "Developed a custom Adobe Illustrator script using JavaScript integrated with the job management system to auto-populate templates and save files, reducing a repetitive 5-minute task to ~1 second and contributing to ~$50K in additional annual revenue; key driver for promotion.",
-      "Managed and mentored a team of two designers, assigning projects, overseeing quality, and deadlines.",
-      "Streamlined top 10 customers' order processing with branded catalogs, boosting customer retention by 50%.",
+      "Built a small internal React application to track time logs for designers, improving workload visibility, reducing turnaround time by 20%, and helping identify bottlenecks.",
+      "Applied user flow optimization to branded digital catalogs, improving ordering experience and increasing repeat client engagement by 50%.",
     ],
   },
   {
@@ -57,7 +57,7 @@ const experience = [
     title: "Graphic Designer – Platinum Signs & Design",
     meta: "July 2021 – May 2024",
     details: [
-      "Implemented 3D renderings, with a high conversion rate of 7 out of 10 quotes converting to sales.",
+      "Built a simple web based order intake form using HTML, CSS, and JavaScript to standardize client submissions, reducing errors and revision requests by 40%.",
       'Created "production specification sheets" to ensure consistency in production outputs for repeat orders, reducing customer complaints about discrepancies by 40%.',
       "Developed production files for the CNC router, increasing production rate by 30% for a major vendor.",
     ],
