@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Cards from "./components/Cards";
+import GraphicDesign from "./components/GraphicDesign";
 import About from "./components/About";
 import Contact from "./components/Contact";
 
@@ -33,6 +34,7 @@ export default function App() {
         <main id="main-content" className="grainy flex-1 flex flex-col pb-20 sm:pb-0">
           <Hero />
           <Cards />
+          <GraphicDesign />
           <About />
           <Contact />
 

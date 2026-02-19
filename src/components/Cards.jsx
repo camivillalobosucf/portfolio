@@ -74,8 +74,17 @@ export default function Cards() {
   };
 
   return (
-    <section id="projects" className="py-6 sm:py-12 px-4 sm:px-6" aria-label="Projects">
+    <section id="projects" className="py-6 sm:py-12 px-4 sm:px-6" aria-label="Product Design">
       <div className="flex flex-col gap-6 sm:gap-8 max-w-6xl mx-auto">
+        {/* Heading + subtitle grouped tightly */}
+        <div className="flex flex-col gap-2 sm:gap-3">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-700 text-center">
+            Product Design
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-600 text-center max-w-2xl mx-auto">
+            A collection of UX/UI design and front-end development work spanning desktop and mobile applications.
+          </p>
+        </div>
         {/* Initial projects */}
         {initialProjects.map((project, index) => (
           <ProjectCard

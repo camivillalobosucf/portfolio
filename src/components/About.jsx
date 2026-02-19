@@ -36,21 +36,26 @@ const socialLinks = [
 // Work experience data
 const experience = [
   {
-    title: "Art Director | Graphic Design Manager - FASTSIGNS",
-    meta: "January 2025 – Present",
-    details: [
-      "Developed a custom Adobe Illustrator script using JavaScript integrated with the job management system to auto-populate templates and save files, reducing a repetitive 5-minute task to ~1 second and contributing to ~$50K in additional annual revenue; key driver for promotion.",
-      "Built a small internal React application to track time logs for designers, improving workload visibility, reducing turnaround time by 20%, and helping identify bottlenecks.",
-      "Applied user flow optimization to branded digital catalogs, improving ordering experience and increasing repeat client engagement by 50%.",
-    ],
-  },
-  {
-    title: "Graphic Designer – FASTSIGNS",
-    meta: "May 2024 – January 2025",
-    details: [
-      "Joined as an experienced designer, clearing the design board daily, significantly improving workflow consistency.",
-      "Leveraged prior experience in the industry to be fully operational within one week, requiring no additional training.",
-      "Assisted in converting quick estimates into sales, emphasizing the importance of speed in client interactions and increasing sales by 15%.",
+    title: "FASTSIGNS",
+    roles: [
+      {
+        title: "Art Director | Graphic Design Manager",
+        meta: "January 2025 – Present",
+        details: [
+          "Developed a custom Adobe Illustrator script using JavaScript integrated with the job management system to auto-populate templates and save files, reducing a repetitive 5-minute task to ~1 second and contributing to ~$50K in additional annual revenue; key driver for promotion.",
+          "Built a small internal React application to track time logs for designers, improving workload visibility, reducing turnaround time by 20%, and helping identify bottlenecks.",
+          "Applied user flow optimization to branded digital catalogs, improving ordering experience and increasing repeat client engagement by 50%.",
+        ],
+      },
+      {
+        title: "Graphic Designer",
+        meta: "May 2024 – January 2025",
+        details: [
+          "Joined as an experienced designer, clearing the design board daily, significantly improving workflow consistency.",
+          "Leveraged prior experience in the industry to be fully operational within one week, requiring no additional training.",
+          "Assisted in converting quick estimates into sales, emphasizing the importance of speed in client interactions and increasing sales by 15%.",
+        ],
+      },
     ],
   },
   {
@@ -83,6 +88,12 @@ const education = [
       "Skills: Front-End Development, HTML, CSS, JavaScript, Responsive Web Design, UI/UX Design, WordPress, PHP, MySQL, React Native, Figma, Wireframing, Prototyping, Accessibility (WCAG), API integration, GitHub, Claude Code, Adobe Illustrator, Adobe Photoshop.",
     ],
   },
+    {
+    title: "Google UX/UI Design Certificate - Coursera",
+    details: [
+      "Completed with a focus on user-centered design, wireframing, prototyping, and usability testing, complementing my formal education and enhancing my practical skills in creating intuitive digital experiences. Developed the Billings Ovulation Tracking App redesign case study as the final project, applying UX/UI principles to improve usability and visual design.",
+    ],
+  },
   {
     title: "Associate in Arts – Valencia College",
     details: [
@@ -98,30 +109,61 @@ function TimelineItem({ item, index }) {
     <Reveal delay={100 + index * 80}>
       <div className="relative">
         {/* Timeline dot */}
-        <span className="absolute -left-[18px] sm:-left-[25px] top-[6px] h-2.5 sm:h-3 w-2.5 sm:w-3 rounded-full bg-white/80 ring-2 ring-white/40" />
+        <span className="absolute -left-[13px] sm:-left-[22px] top-[6px] h-2.5 sm:h-3 w-2.5 sm:w-3 rounded-full bg-white/80 ring-2 ring-white/40" />
 
         {/* Card content */}
         <div className="mirror-glass rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4">
-          <div className="font-medium text-neutral-800 text-sm sm:text-base">
-            {item.title}
-          </div>
-
-          {item.meta && (
-            <div className="mt-1 text-xs sm:text-sm text-neutral-600">
-              {item.meta}
-            </div>
-          )}
-
-          {/* Bullet points with proper alignment */}
-          {item.details && item.details.length > 0 && (
-            <ul className="mt-3 space-y-1.5 text-xs sm:text-sm text-neutral-700">
-              {item.details.map((detail, idx) => (
-                <li key={idx} className="leading-relaxed flex items-start">
-                  <span className="shrink-0 mr-2 mt-0.5">•</span>
-                  <span>{detail}</span>
-                </li>
+          {item.roles ? (
+            // Multi-role entry (e.g. FASTSIGNS)
+            <>
+              <div className="font-semibold text-neutral-800 text-sm sm:text-base mb-3">
+                {item.title}
+              </div>
+              {item.roles.map((role, ri) => (
+                <div key={ri} className={ri > 0 ? "mt-4 pt-4 border-t border-white/30" : ""}>
+                  <div className="font-medium text-neutral-800 text-sm sm:text-base">
+                    {role.title}
+                  </div>
+                  {role.meta && (
+                    <div className="mt-1 text-xs sm:text-sm text-neutral-600">
+                      {role.meta}
+                    </div>
+                  )}
+                  {role.details && role.details.length > 0 && (
+                    <ul className="mt-3 space-y-1.5 text-xs sm:text-sm text-neutral-700">
+                      {role.details.map((detail, idx) => (
+                        <li key={idx} className="leading-relaxed flex items-start">
+                          <span className="shrink-0 mr-2 mt-0.5">•</span>
+                          <span>{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               ))}
-            </ul>
+            </>
+          ) : (
+            // Single-role entry (existing behavior)
+            <>
+              <div className="font-medium text-neutral-800 text-sm sm:text-base">
+                {item.title}
+              </div>
+              {item.meta && (
+                <div className="mt-1 text-xs sm:text-sm text-neutral-600">
+                  {item.meta}
+                </div>
+              )}
+              {item.details && item.details.length > 0 && (
+                <ul className="mt-3 space-y-1.5 text-xs sm:text-sm text-neutral-700">
+                  {item.details.map((detail, idx) => (
+                    <li key={idx} className="leading-relaxed flex items-start">
+                      <span className="shrink-0 mr-2 mt-0.5">•</span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </>
           )}
         </div>
       </div>

@@ -48,7 +48,7 @@ export default function Hero() {
         className="typewriter text-4xl sm:text-5xl md:text-6xl font-semibold text-neutral-700"
       />
       <p className="subtitle text-base sm:text-lg md:text-xl mt-2 text-neutral-600">
-        and this is what I've built!
+        and this is what I've designed!
       </p>
     </section>
   );

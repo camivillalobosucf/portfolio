@@ -60,7 +60,12 @@ export default function Navbar() {
           <ul className="flex gap-3 sm:gap-4 md:gap-6 bg-neutral-400/30 text-xs sm:text-sm rounded-full px-4 sm:px-5 md:px-6 py-2 backdrop-blur-sm">
             <li>
               <a href="#projects" className={navLinkClass}>
-                Projects
+                Product Design
+              </a>
+            </li>
+            <li>
+              <a href="#graphic-design" className={navLinkClass}>
+                Graphic Design
               </a>
             </li>
             <li>
@@ -101,7 +106,17 @@ export default function Navbar() {
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                 </svg>
-                <span className="text-xs font-medium">Projects</span>
+                <span className="text-xs font-medium">Product</span>
+              </a>
+            </li>
+
+            <li className="flex-1">
+              <a href="#graphic-design" className={mobileNavLinkClass}>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536M9 13l6.586-6.586a2 2 0 012.828 0l.172.172a2 2 0 010 2.828L12 16H9v-3z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21h18" />
+                </svg>
+                <span className="text-xs font-medium">Design</span>
               </a>
             </li>
 

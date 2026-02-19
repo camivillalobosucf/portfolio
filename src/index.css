@@ -212,6 +212,12 @@ body {
   .text-4xl { font-size: 2.5rem; }
 }
 
+/* Hide navigation and scroll-to-top button when the image lightbox is open */
+body.lightbox-open nav,
+body.lightbox-open [aria-label="Scroll to top"] {
+  display: none;
+}
+
 /* Screen reader only */
 .sr-only {
   position: absolute;
