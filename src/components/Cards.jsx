@@ -40,7 +40,7 @@ function ProjectCard({ project, index, cardRef }) {
         <h3 className="text-xl sm:text-2xl font-semibold text-neutral-700 mb-3 lg:mb-4">
           {project.title}
         </h3>
-        <p className="text-neutral-600 text-sm leading-relaxed mb-4 lg:mb-6">
+        <p className="text-neutral-700 text-sm leading-relaxed mb-4 lg:mb-6">
           {project.description}
         </p>
         <a
@@ -81,7 +81,7 @@ export default function Cards() {
           <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-700 text-center">
             Product Design
           </h2>
-          <p className="text-sm sm:text-base text-neutral-600 text-center max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-neutral-700 text-center max-w-2xl mx-auto">
             A collection of UX/UI design and front-end development work spanning desktop and mobile applications.
           </p>
         </div>

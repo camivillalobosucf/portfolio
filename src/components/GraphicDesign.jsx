@@ -82,7 +82,7 @@ export default function GraphicDesign() {
             </Reveal>
 
             <Reveal delay={60}>
-              <p className="text-sm sm:text-base text-neutral-600 text-center max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-neutral-700 text-center max-w-2xl mx-auto">
                 A selection of print, signage, and branding work created throughout my career in the sign industry and beyond.
               </p>
             </Reveal>

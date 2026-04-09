@@ -47,7 +47,7 @@ export default function Contact() {
         </Reveal>
 
         <Reveal delay={80}>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-neutral-600 text-center px-4">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-neutral-700 text-center px-4">
             Have a project in mind or just want to say hi? Send me a message.
           </p>
 

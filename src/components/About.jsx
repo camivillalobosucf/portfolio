@@ -125,7 +125,7 @@ function TimelineItem({ item, index }) {
                     {role.title}
                   </div>
                   {role.meta && (
-                    <div className="mt-1 text-xs sm:text-sm text-neutral-600">
+                    <div className="mt-1 text-xs sm:text-sm text-neutral-700">
                       {role.meta}
                     </div>
                   )}
@@ -149,7 +149,7 @@ function TimelineItem({ item, index }) {
                 {item.title}
               </div>
               {item.meta && (
-                <div className="mt-1 text-xs sm:text-sm text-neutral-600">
+                <div className="mt-1 text-xs sm:text-sm text-neutral-700">
                   {item.meta}
                 </div>
               )}
@@ -241,7 +241,7 @@ export default function About() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-neutral-600 hover:text-neutral-900 transition-colors duration-200 p-2 rounded-full hover:bg-white/40"
+                    className="text-neutral-700 hover:text-neutral-900 transition-colors duration-200 p-2 rounded-full hover:bg-white/40"
                     aria-label={`Visit ${social.name} profile`}
                   >
                     {social.icon}

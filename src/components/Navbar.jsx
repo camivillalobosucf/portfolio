@@ -44,7 +44,7 @@ export default function Navbar() {
         <div
           className={`
             mx-auto w-full max-w-6xl flex items-center justify-between
-            text-neutral-600 transition-all duration-300
+            text-neutral-700 transition-all duration-300
             ${scrolled
               ? "rounded-2xl sm:rounded-3xl bg-white/35 backdrop-blur-xl border border-white/50 shadow-md py-2 sm:py-3 px-4 sm:px-6"
               : "bg-transparent py-4 sm:py-6 px-4 sm:px-6"

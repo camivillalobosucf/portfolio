@@ -14,7 +14,7 @@
 /* Base styles */
 html {
   height: 100%;
-  background: #E4E3DE;
+  background: #f7f6f3;
   scroll-behavior: smooth;
 }
 
@@ -28,18 +28,33 @@ body {
 /* Custom utility classes */
 @layer utilities {
 
-  /* Animated gradient background */
+  /* Base background with dot grid */
   .bg-oval {
-    background:
-      radial-gradient(120% 85% at 50% 55%,
-        #8C8A85 0%,
-        #CFCFCB 32%,
-        #E4E3DE 58%,
-        #EAE9E3 80%,
-        #EAE9E3 100%);
+    background-color: #f7f6f3;
+    background-image: radial-gradient(circle, rgba(120, 113, 102, 0.2) 1.5px, transparent 1.5px);
+    background-size: 26px 26px;
     background-attachment: fixed;
-    background-size: 120% 120%;
-    animation: ovalShift 40s ease-in-out infinite alternate;
+  }
+
+  /* Moving gradient orb */
+  .orb {
+    position: fixed;
+    top: -20vh;
+    left: -15vw;
+    width: 80vmax;
+    height: 80vmax;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at center,
+      rgba(185, 160, 225, 0.52) 0%,
+      rgba(150, 195, 240, 0.28) 42%,
+      transparent 68%
+    );
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+    animation: orbFloat 18s ease-in-out infinite;
   }
 
   /* Subtle noise texture overlay */
@@ -54,7 +69,7 @@ body {
     position: absolute;
     inset: 0;
     z-index: -1;
-    opacity: 0.09;
+    opacity: 0.04;
     mix-blend-mode: multiply;
     pointer-events: none;
     background-size: 200px 200px;
@@ -101,9 +116,13 @@ body {
 }
 
 /* Keyframe animations */
-@keyframes ovalShift {
-  0%,100% { background-position: 0% 50%; }
-  50%     { background-position: 100% 52%; }
+@keyframes orbFloat {
+  0%   { transform: translate(0vw,    0vh);  }
+  18%  { transform: translate(52vw,   8vh);  }
+  36%  { transform: translate(42vw,  48vh);  }
+  54%  { transform: translate(8vw,   58vh);  }
+  72%  { transform: translate(-8vw,  28vh);  }
+  100% { transform: translate(0vw,    0vh);  }
 }
 
 @keyframes grainDrift {

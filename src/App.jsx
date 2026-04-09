@@ -28,7 +28,8 @@ export default function App() {
 
   return (
     <div className="w-full min-h-[100dvh] bg-oval flex justify-center">
-      <div className="w-full max-w-7xl min-h-[100dvh] px-4 sm:px-6 flex flex-col">
+      <div aria-hidden="true" className="orb" />
+      <div className="relative z-10 w-full max-w-7xl min-h-[100dvh] px-4 sm:px-6 flex flex-col">
         <Navbar />
 
         <main id="main-content" className="grainy flex-1 flex flex-col pb-20 sm:pb-0">
@@ -38,7 +39,7 @@ export default function App() {
           <About />
           <Contact />
 
-          <footer className="mt-4 pb-10 sm:pb-4 text-center text-sm text-neutral-500">
+          <footer className="mt-4 pb-10 sm:pb-4 text-center text-sm text-neutral-700">
             Developed by Camila Villalobos © 2026
           </footer>
         </main>

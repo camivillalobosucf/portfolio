@@ -66,30 +66,36 @@ export const graphicDesignProjects = [
     id: "gd1",
     title: "Dapper Tots Branding",
     images: ["/gd1.jpg", "/gd1_2.jpg", "/gd1_3.jpg"],
+    designThinking: `The name "Dapper Tots" gave me a nice tension to work with. Sophisticated on one side, small and playful on the other. I wanted parents to feel proud carrying this brand, not just charmed by it.\n\nThe palette came from thinking about a nursery shelf: soft sky blue, sage green, blush, and cream. Each color needed to work on its own and mix well together so collections would not clash. I leaned into rounded, bubbly letterforms that have personality without feeling chaotic, the kind of type a child would draw if they could also kern.\n\nThe cloud mascot was an early idea I kept coming back to. It is innocent, scalable, and ties the "Cloud Comfort" sub-line directly into the visual language. On the shipping boxes, the brand pattern wraps the entire surface, because unboxing is part of the experience, and I wanted that first moment to feel like something.`,
   },
   {
     id: "gd2",
     title: "Echanté Cosmetics Branding",
     images: ["/gd2.jpg", "/gd2_2.jpg", "/gd2_3.jpg"],
+    designThinking: `Echanté means "enchanted" in French, and the client wanted that feeling: elevated, a little romantic, but still approachable. Not a brand that intimidates you at the counter.\n\nThe gradient from soft pink to deep magenta was an early lock. It reads feminine and modern without sliding into cliché, and it photographs beautifully against the neutral backdrops beauty brands love. I kept the "EÉ" monogram prominent but clean. The accent mark does a lot of work, signaling European refinement without over-explaining it.\n\nLuxury brands need to breathe, so I kept the typography spaced and restrained. The topographic line texture in the product box adds depth and tactility, something to catch the eye on a shelf without pulling focus from the product itself. The business card flips to a darker purple to gold gradient, which is what you hand someone when you want them to remember you.`,
   },
   {
     id: "gd3",
     title: "Cakes & Love Branding",
     images: ["/gd3.jpg"],
+    designThinking: `The client's ask was simple: make the packaging feel like a gift before anyone opens it. A lot of bakery brands default to pink or kraft paper, so I pushed toward a bold red. It is warm, it is celebratory, and it photographs beautifully against chocolate.\n\nThe white hand drawn doodle pattern (hearts, wedding cakes, ribbons) gives the boxes that artisan, handcrafted quality. It tells a story about what is inside without saying a word. I wanted someone walking past to immediately understand this is for celebrations.\n\nThe logo typography uses a melted drip treatment on "Cakes", a small detail that makes the brand feel coherent rather than assembled. The system lives on both a clean white card and a dark branded version, giving the client flexibility depending on whether they are packaging a wedding order or handing out a business card at a market.`,
   },
   {
     id: "gd4",
     title: "Arepas Café Menu Design",
     images: ["/gd4.jpg"],
+    designThinking: `Menu design is really information architecture with branding on top. The challenge here was a genuinely large menu: arepas, cachapas, patacones, sandwiches, a kids section, beverages. Making it all feel organized without feeling clinical.\n\nI chose a dark espresso background because it performs well under restaurant lighting and gives the warm golden typography real presence. I set up a clear color hierarchy: white for headlines, golden yellow for category labels, softer warm tones for body text. That way customers have a natural reading path even when they are hungry and distracted.\n\nThe food photography strip across the top was a deliberate choice. Before a customer reads a single word, they should understand what kind of food this is. These are wall mounted boards, so I kept the type larger than I might on a print menu. Legibility at a distance was a hard requirement, not an afterthought.`,
   },
   {
     id: "gd5",
     title: "Uncle Mel's Backyard BBQ Logo Design",
     images: ["/gd5.jpg", "/gd5_2.jpg"],
+    designThinking: `The brief basically wrote itself: summer, smoke, and legendary ribs. The client wanted something that felt like it had been on that corner for forty years, the kind of sign locals give directions by.\n\nI went full retro Americana. The stacked serif typography with stars, the fire and grill icon, the "Chicago Style Ribs & Sandwiches" tagline. Every element is doing double duty as branding and as storytelling. The gradient from deep red to bright orange almost radiates heat, like the sign itself is glowing from the inside.\n\nBefore finalizing, I tested the logo on an illuminated cabinet sign and on a dark wood surface. Both had to work without losing legibility or energy. The bold outlines and high contrast make sure the logo reads clearly whether it is backlit at night or printed on a napkin.`,
   },
   {
     id: "gd6",
     title: "PTR Solutions Branding",
     images: ["/gd6.jpg", "/gd6_2.jpg", "/gd6_3.jpg"],
+    designThinking: `Most software companies land in the same safe blue and white zone. The goal here was to build something that felt technical and credible without being forgettable.\n\nThe circuit board motif embedded inside the P, T, and R letterforms was the central idea. It communicates "software" without spelling it out, and it turns the initials into a mark that rewards a second look. I kept the execution precise: thin lines, small nodes. Sloppiness in a tech brand erodes trust immediately.\n\nThe palette is tight: greys, silvers, white. That restraint signals precision. This is a B2B company walking into enterprise conversations, and the brand needed to feel like it belonged in that room. The full stationery system (letterhead, business cards, envelope, sticker) was designed with consistent margins and placement so the brand feels intentional at every touchpoint, not just on a screen.`,
   },
 ];

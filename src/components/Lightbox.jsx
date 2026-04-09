@@ -237,18 +237,21 @@ export default function Lightbox({ project, imageIndex, onClose, onPrev, onNext,
 
   return (
     <div
-      className="fixed inset-0 z-[200] flex items-center justify-center bg-neutral-900/85 backdrop-blur-sm p-4 sm:p-8"
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-neutral-900/85 backdrop-blur-sm p-3 sm:p-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={project.title}
     >
       <div
-        className="w-full max-w-4xl flex flex-col items-center gap-4"
+        className="w-full max-w-6xl flex flex-col gap-3"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Top bar: close button */}
-        <div className="flex justify-end w-full">
+        {/* Top bar: title + close */}
+        <div className="flex items-center justify-between w-full gap-4">
+          <h2 className="text-white/90 font-semibold text-sm sm:text-base truncate">
+            {project.title}
+          </h2>
           <button onClick={onClose} className={btnClass} aria-label="Close lightbox">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -256,24 +259,40 @@ export default function Lightbox({ project, imageIndex, onClose, onPrev, onNext,
           </button>
         </div>
 
-        {/* Image container — zoom/pan gestures attached here */}
-        <div
-          ref={containerRef}
-          className="w-full h-[58vh] sm:h-[68vh] rounded-2xl overflow-hidden bg-neutral-800/60 border border-white/10 select-none"
-          style={{ touchAction: "none" }}
-        >
-          <img
-            ref={imgRef}
-            key={imageIndex}
-            src={project.images[imageIndex]}
-            alt={`${project.title} — image ${imageIndex + 1} of ${total}`}
-            className="w-full h-full object-cover"
-            draggable={false}
-            style={{ transformOrigin: "center center", willChange: "transform" }}
-          />
+        {/* Image + description panel */}
+        <div className="flex flex-col lg:flex-row gap-3 w-full">
+
+          {/* Image container — zoom/pan gestures attached here */}
+          <div
+            ref={containerRef}
+            className="lg:flex-[3] h-[38vh] sm:h-[44vh] lg:h-[60vh] rounded-2xl overflow-hidden bg-neutral-800/60 border border-white/10 select-none shrink-0"
+            style={{ touchAction: "none" }}
+          >
+            <img
+              ref={imgRef}
+              key={imageIndex}
+              src={project.images[imageIndex]}
+              alt={`${project.title} — image ${imageIndex + 1} of ${total}`}
+              className="w-full h-full object-cover"
+              draggable={false}
+              style={{ transformOrigin: "center center", willChange: "transform" }}
+            />
+          </div>
+
+          {/* Design thinking description */}
+          <div className="lg:flex-[2] lg:h-[60vh] overflow-y-auto rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-4 sm:p-5 max-h-[28vh] lg:max-h-none">
+            <p className="text-white/50 text-xs uppercase tracking-widest font-medium mb-3">
+              Design Thinking
+            </p>
+            {project.designThinking.split("\n\n").map((para, i) => (
+              <p key={i} className={`text-white/85 text-xs sm:text-sm leading-relaxed ${i > 0 ? "mt-3" : ""}`}>
+                {para}
+              </p>
+            ))}
+          </div>
         </div>
 
-        {/* Controls row: prev / title + dots / next */}
+        {/* Controls row: prev / dots / next */}
         <div className="flex items-center justify-between w-full gap-3">
           <button onClick={onPrev} disabled={total <= 1} className={btnClass} aria-label="Previous image">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -281,24 +300,17 @@ export default function Lightbox({ project, imageIndex, onClose, onPrev, onNext,
             </svg>
           </button>
 
-          <div className="flex flex-col items-center gap-2 min-w-0 flex-1">
-            <p className="text-white/90 text-sm sm:text-base font-medium text-center leading-snug">
-              {project.title}
-            </p>
-            {total > 1 && (
-              <div className="flex gap-2 items-center">
-                {project.images.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => onJumpTo(i)}
-                    className={`h-2 rounded-full transition-all duration-200 ${
-                      i === imageIndex ? "w-5 bg-white" : "w-2 bg-white/40 hover:bg-white/70"
-                    }`}
-                    aria-label={`Go to image ${i + 1}`}
-                  />
-                ))}
-              </div>
-            )}
+          <div className="flex items-center gap-2">
+            {total > 1 && project.images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => onJumpTo(i)}
+                className={`h-2 rounded-full transition-all duration-200 ${
+                  i === imageIndex ? "w-5 bg-white" : "w-2 bg-white/40 hover:bg-white/70"
+                }`}
+                aria-label={`Go to image ${i + 1}`}
+              />
+            ))}
           </div>
 
           <button onClick={onNext} disabled={total <= 1} className={btnClass} aria-label="Next image">
