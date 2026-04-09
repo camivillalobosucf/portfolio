@@ -91,7 +91,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="self-center sm:self-start mt-2 rounded-full px-6 py-3 bg-neutral-700 text-white font-medium hover:bg-neutral-800 transition-colors disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 text-sm sm:text-base"
+              className="self-center mt-2 rounded-full px-6 py-3 bg-neutral-700 text-white font-medium hover:bg-neutral-800 transition-colors disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 text-sm sm:text-base"
             >
               {status === "loading" ? "Sending…" : "Send message"}
             </button>
