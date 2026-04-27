@@ -12,12 +12,12 @@ export const initialProjects = [
     link: "https://www.behance.net/gallery/200864449/Case-Study-Billings-Ovulation-App-Redesign#",
   },
   {
-    id: 3,
-    title: "AriaFit React Web Application",
+    id: 7,
+    title: "BabyTrack Web Application",
     description:
-      "AriaFit is a responsive fitness coaching web app built with React and Tailwind CSS, developed using Claude Code to accelerate setup and component structure. It features multi-page navigation, program listings, and a validated contact flow, deployed through an automated GitHub → Netlify pipeline.",
-    image: "/project3_ariafit.png",
-    link: "https://ariafit.netlify.app/",
+      "BabyTrack is a responsive web app for parents to log and monitor their baby's daily activities. Track feedings, diaper changes, and sleep sessions, then view a live analytics dashboard to spot patterns in their baby's routine. Includes a diary, detailed baby profile with auto-calculated age, gender theming, dark mode, and English/Spanish toggle. Built with React 18 + Vite, Firebase Auth + Firestore, and React Router, developed with Claude Code.",
+    image: "/project7_babytrack.png",
+    link: "https://babytrackmidterm.netlify.app/",
   },
   {
     id: 5,
@@ -37,6 +37,14 @@ export const additionalProjects = [
       "A dietary-restriction restaurant finder app designed to help users with food allergies and dietary needs discover safe dining options. Served as UX/UI Lead, creating wireframes, prototypes, and user flows.",
     image: "/project4_safebites.png",
     link: "https://www.figma.com/proto/pNkh6vKDf2PltK75ZibOaD/Capstone-Restaurant-App?node-id=233-261&p=f&t=kbQkAC0QcysBpUKz-1&scaling=scale-down&content-scaling=fixed&page-id=233%3A260&starting-point-node-id=233%3A261",
+  },
+  {
+    id: 3,
+    title: "AriaFit React Web Application",
+    description:
+      "AriaFit is a responsive fitness coaching web app built with React and Tailwind CSS, developed using Claude Code to accelerate setup and component structure. It features multi-page navigation, program listings, and a validated contact flow, deployed through an automated GitHub → Netlify pipeline.",
+    image: "/project3_ariafit.png",
+    link: "https://ariafit.netlify.app/",
   },
   {
     id: 1,

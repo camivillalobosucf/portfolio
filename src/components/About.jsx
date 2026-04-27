@@ -40,7 +40,7 @@ const experience = [
     roles: [
       {
         title: "Art Director | Graphic Design Manager",
-        meta: "January 2025 – Present",
+        meta: "January 2025 – April 2026",
         details: [
           "Developed a custom Adobe Illustrator script using JavaScript integrated with the job management system to auto-populate templates and save files, reducing a repetitive 5-minute task to ~1 second and contributing to ~$50K in additional annual revenue; key driver for promotion.",
           "Built a small internal React application to track time logs for designers, improving workload visibility, reducing turnaround time by 20%, and helping identify bottlenecks.",
@@ -82,9 +82,9 @@ const experience = [
 const education = [
   {
     title: "B.A. in Digital Media – University of Central Florida",
+    honors: "Graduated Magna Cum Laude · GPA: 3.98.",
     details: [
       "Relevant Coursework: Client-Side Scripting, Front-End Web Design, Server-Side Scripting, Mobile Development, User-Centered Design, Low-Code Development, and Capstone I & II. Hands-on projects include a full-stack restaurant dietary-restriction app, movie review CMS with authentication, B2B private catalog prototype, AI-assisted fitness mobile app, and ovulation tracking UX/UI prototype",
-      "GPA: 3.98, President's List.",
       "Skills: Front-End Development, HTML, CSS, JavaScript, Responsive Web Design, UI/UX Design, WordPress, PHP, MySQL, React Native, Figma, Wireframing, Prototyping, Accessibility (WCAG), API integration, GitHub, Claude Code, Adobe Illustrator, Adobe Photoshop.",
     ],
   },
@@ -148,6 +148,11 @@ function TimelineItem({ item, index }) {
               <div className="font-medium text-neutral-800 text-sm sm:text-base">
                 {item.title}
               </div>
+              {item.honors && (
+                <div className="mt-1 text-xs sm:text-sm font-semibold text-neutral-800">
+                  {item.honors}
+                </div>
+              )}
               {item.meta && (
                 <div className="mt-1 text-xs sm:text-sm text-neutral-700">
                   {item.meta}

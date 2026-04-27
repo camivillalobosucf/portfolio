@@ -51,11 +51,17 @@ export default function Navbar() {
             }
           `}
         >
-          <Logo
-            className="w-24 sm:w-28 md:w-32 fill-neutral-700"
-            aria-label="Cami logo"
-            role="img"
-          />
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Back to top"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 rounded"
+          >
+            <Logo
+              className="w-24 sm:w-28 md:w-32 fill-neutral-700"
+              aria-label="Cami logo"
+              role="img"
+            />
+          </button>
 
           <ul className="flex gap-3 sm:gap-4 md:gap-6 bg-neutral-400/30 text-xs sm:text-sm rounded-full px-4 sm:px-5 md:px-6 py-2 backdrop-blur-sm">
             <li>
@@ -84,11 +90,17 @@ export default function Navbar() {
 
       {/* Mobile logo - centered at top */}
       <div className="md:hidden pt-6 pb-4 px-6 flex justify-center">
-        <Logo
-          className="w-40 fill-neutral-700"
-          aria-label="Cami logo"
-          role="img"
-        />
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
+          className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 rounded"
+        >
+          <Logo
+            className="w-40 fill-neutral-700"
+            aria-label="Cami logo"
+            role="img"
+          />
+        </button>
       </div>
 
       {/* Mobile navbar - fixed bottom */}
